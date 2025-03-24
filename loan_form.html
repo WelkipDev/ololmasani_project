@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href=".vscode/styles.css">
+    <script src="moita.js" type="text/javascript"></script>
+    <!-- Add your favicon here -->
+    <link rel="icon" href="images/urlicon.ico" type="image/x-icon">
+    <style>
+        /* Styles for the form */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Flex container for header and menu */
+        .header-menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #34495e;
+            padding: 10px;
+            border-radius: 5px;
+            width: 99%;
+            margin-bottom: 10px;
+        }
+
+        /* Header styles */
+        .header1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .header1 img {
+            height: 50px;
+            display: flex;
+        }
+
+        /* Menu styles */
+        .menu {
+            display: flex;
+            align-items: center;
+            background-color: #34495e;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: center;
+        }
+
+        .menu ul a {
+            display: inline-block;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu ul a:hover {
+            background-color: #1abc9c;
+        }
+
+
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .form-container h2 {
+            color: #0cc35b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            color: #060606;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .form-container button {
+            padding: 10px;
+            background-color: #1abc9c;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #16a085;
+        }
+
+        .form-container button:active {
+            background-color: #148f77;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-section h3 {
+            color: #121613;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+        }
+
+        .form-sections {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            overflow-x: auto;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #0fe059;
+        }
+
+        .mission,
+        .footer {
+            text-align: center;
+            width: 99%;
+        }
+
+        .footer address {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            var formContainer = document.getElementById("form-container");
+            if (formContainer.style.display === "none" || formContainer.style.display === "") {
+                formContainer.style.display = "block";
+            } else {
+                formContainer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="header-menu-container">
+        <div class="header1">
+            <a href="index.html">
+                <img src="images/Logo2.png" alt="LOGO">
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="menu-item">
+                    <a href="index.html">Home</a>
+
+                <li class="menu-item">
+                    <a href="services.html">Services</a>
+
+                </li>
+                <li class="menu-item">
+                    <a href="downloads.html">Downloads</a>
+
+                </li>
+                <li class="menu-item">
+                    <a href="contact.html">Contact Us</a>
+
+                </li>
+                <li class="menu-item">
+                    <a href="help.html">Help</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="form-container">
+        <p><a href="check_status.php"> Check for your loan application status</a></p>
+        <div class="form-container">
+            <a onclick="toggleForm()" class="togglebutton">Apply for Loan</a>
+            <div id="form-container" style="display:none;">
+                <h2>Loan Application Form</h2>
+                <form action="submit_loan_application.php" method="post">
+                    <div class="form-sections">
+                        <div class="form-section">
+                            <fieldset>
+                                <legend>Station</legend>
+                                <label for="station">Station</label>
+                                <input type="text" id="station" name="station" required>
+
+                                <label for="loaning_date">Loaning Date</label>
+                                <input type="date" id="loaning_date" name="loaning_date" required>
+
+                                <label for="refund_date">Refund Date</label>
+                                <input type="date" id="refund_date" name="refund_date" required>
+
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" required>
+
+                                <label for="sub_location">Sub-Location</label>
+                                <input type="text" id="sub_location" name="sub_location" required>
+
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+
+                                <label for="village">Village</label>
+                                <input type="text" id="village" name="village" required>
+
+                                <label for="id_no">ID No</label>
+                                <input type="text" id="id_no" name="id_no" required>
+
+                                <label for="marital_status">Marital Status</label>
+                                <input type="text" id="marital_status" name="marital_status" required>
+
+                                <label for="phone_no">Phone No</label>
+                                <input type="tel" id="phone_no" name="phone_no" required>
+
+                                <label for="occupation">Occupation</label>
+                                <input type="text" id="occupation" name="occupation" required>
+
+                                <label for="family">Family</label>
+                                <input type="text" id="family" name="family" required>
+
+                                <label for="loan_applied">Loan Applied</label>
+                                <input type="number" id="loan_applied" name="loan_applied" required>
+
+                                <label for="loan_in_words">Loan in Words</label>
+                                <input type="text" id="loan_in_words" name="loan_in_words" required>
+
+                                <label for="one_week_pay">1 Week Period 10% Pay</label>
+                                <input type="number" id="one_week_pay" name="one_week_pay" required>
+
+                                <label for="two_weeks_pay">2 Weeks Period Pay</label>
+                                <input type="number" id="two_weeks_pay" name="two_weeks_pay" required>
+
+                                <label for="securities">Securities</label>
+                                <input type="text" id="securities" name="securities" required>
+
+                                <label for="securities_particulars">Securities Particulars (KSHS)</label>
+                                <input type="number" id="securities_particulars" name="securities_particulars" required>
+
+                                <label for="loan_purpose">Purpose of the Loan</label>
+                                <textarea id="loan_purpose" name="loan_purpose" rows="4" required></textarea>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-section">
+                            <fieldset>
+                                <legend>Guarantor</legend>
+                                <label for="guarantor_name">Guarantor Name</label>
+                                <input type="text" id="guarantor_name" name="guarantor_name" required>
+
+                                <label for="guarantor_id">Guarantor ID</label>
+                                <input type="text" id="guarantor_id" name="guarantor_id" required>
+
+                                <label for="guarantor_phone">Guarantor Phone No</label>
+                                <input type="tel" id="guarantor_phone" name="guarantor_phone" required>
+
+                                <label for="guarantor_sign">Guarantor Sign</label>
+                                <input type="text" id="guarantor_sign" name="guarantor_sign" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-section">
+                            <fieldset>
+                                <legend>Affidavit</legend>
+                                <label for="deponent_name">Deponent Name</label>
+                                <input type="text" id="deponent_name" name="deponent_name" required>
+
+                                <label for="deponent_address">Deponent Address</label>
+                                <input type="text" id="deponent_address" name="deponent_address" required>
+
+                                <label for="deponent_id">Deponent ID</label>
+                                <input type="text" id="deponent_id" name="deponent_id" required>
+
+                                <label for="deponent_sign">Deponent Sign</label>
+                                <input type="text" id="deponent_sign" name="deponent_sign" required>
+
+                                <label for="sworn_at">Sworn at</label>
+                                <input type="text" id="sworn_at" name="sworn_at" required>
+
+                                <label for="sworn_date">Sworn Date</label>
+                                <input type="date" id="sworn_date" name="sworn_date" required>
+
+                                <label for="commissioner_oaths">Commissioner for Oaths</label>
+                                <input type="text" id="commissioner_oaths" name="commissioner_oaths" required>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <button type="submit">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mission">
+        <h2>OUR MISSION</h2>
+        <p>Our mission is to provide financial services to underserved communities, supporting economic growth
+            and
+            financial
+            inclusion.</p>
+    </div>
+
+    <div class="footer">
+        <address>
+            <h2 id="contact">CONTACT US:</h2>
+            <p id="contact">Ololmasani Capital Limited | Ololmasani Takitech Centre, Narok County, Kenya | P.O.
+                Box 13 -
+                20404, Ndanai | Email: olmf@gmail.com</p>
+        </address>
+    </div>
+</body>
+
+</html>

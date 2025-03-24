@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>>
+    <link rel="stylesheet" href=".vscode/styles.css">
+    <script src="moita.js" type="text/javascript"></script>
+    <!-- Add your favicon here -->
+    <link rel="icon" href="images/urlicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header-menu-container">
+        <div class="header1">
+            <a href="index.html">
+                <img src="images/Logo2.png" alt="LOGO">
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu">
+                <ul>
+                    <li class="menu-item">
+                    <li class="menu-item">
+                        <a href="index.html">Home</a>l">Home</a>
+
+                    </li>
+                    <li class="menu-item">
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li class="menu-item"></li>
+                    </li>
+                    <li class="menu-item">
+                        <a href="downloads.html">Downloads</a>
+
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact Us</a>
+
+                    </li>
+                    <li class="menu-item">
+                        <a href="help.html">Help</a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form action="register.php" method="post">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="village">Village</label>
+                <input type="text" id="village" name="village" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    <option value="applicant">Applicant</option>
+                </select>
+
+                <label for="password">Password</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" required>
+                    <i class="fa fa-eye" aria-hidden="true" id="togglePassword" style="cursor: pointer;"></i>
+                </div>
+
+                <label for="confirmpassword">Confirm Password</label>
+                <div class="input-container">
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                    <i class="fa fa-eye" aria-hidden="true" id="toggleConfirmPassword" style="cursor: pointer;"></i>
+                </div>
+
+                <script>
+                    const togglePassword = document.querySelector('#togglePassword');
+                    const password = document.querySelector('#password');
+                    const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+                    const confirmPassword = document.querySelector('#confirmpassword');
+
+                    togglePassword.addEventListener('click', function (e) {
+                        // toggle the type attribute
+                        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                        password.setAttribute('type', type);
+                        // toggle the eye slash icon
+                        this.classList.toggle('fa-eye-slash');
+                    });
+
+                    toggleConfirmPassword.addEventListener('click', function (e) {
+                        // toggle the type attribute
+                        const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                        confirmPassword.setAttribute('type', type);
+                        // toggle the eye slash icon
+                        this.classList.toggle('fa-eye-slash');
+                    });
+                </script>
+
+                <div class="terms-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="mission">
+
+            <h2>OUR MISSION</h2>
+            <p>Our mission is to provide financial services to underserved communities,
+                supporting economic growth and financial inclusion.</p>
+        </div>
+
+        <div class="footer">
+            <address>
+                <h2 id="contact">CONTACT US:</h2>
+                <p id="contact">Ololmasani Capital Limited | Ololmasani Takitech Centre, Narok County, Kenya | P.O.
+                    Box
+                    13 - 20404, Ndanai | Email: olmf@gmail.com</p>
+            </address>
+        </div>
+</body>
+
+</html>

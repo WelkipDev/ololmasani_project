@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href=".vscode/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script>
+        function toggleForm() {
+            var formContainer = document.getElementById("form-container");
+            if (formContainer.style.display === "none" || formContainer.style.display === "") {
+                formContainer.style.display = "block";
+            } else {
+                formContainer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header-menu-container">
+        <div class="header1">
+            <a href="index.html">
+                <img src="images/Logo2.png" alt="LOGO">
+            </a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="downloads.html">Downloads</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="help.html">Help</a>
+                <a href="logout.php">Logout</a>
+            </ul>
+        </div>
+    </div>
+    <p><a href="check_status.php"> Check for your loan application status</a></p>
+    <div class="form-container">
+        <a onclick="toggleForm()" class="togglebutton">Apply for Loan</a>
+        <div id="form-container" style="display:none;">
+            <h2>Loan Application Form</h2>
+            <form action="loan.php" method="post">
+                <label for="id_number">ID Number</label>
+                <input type="text" id="id_number" name="id_number" required>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="amount">Loan Amount</label>
+                <input type="number" id="amount" name="amount" required>
+
+                <label for="purpose">Purpose of Loan</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="personal">Personal</option>
+                    <option value="business">Business</option>
+                    <option value="education">Education</option>
+                    <option value="home">Home</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Submit Application</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="mission">
+        <h2>OUR MISSION</h2>
+        <p>Our mission is to provide financial services to underserved communities,
+            supporting economic growth and financial inclusion.</p>
+    </div>
+    <div class="footer">
+        <address>
+            <h2>CONTACT US:</h2>
+            <p id="contact">Ololmasani Capital Limited | Ololmasani Takitech Centre, Narok County, Kenya | P.O.
+                Box
+                13 - 20404, Ndanai | Email: olmf@gmail.com</p>
+        </address>
+    </div>
+</body>
+
+</html>

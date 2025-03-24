@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repayment Form</title>
+  <link rel="stylesheet" href=".vscode/styles.css">
+</head>
+
+<body>
+  <div class="repayment-container">
+    <h2>Make a Repayment</h2>
+    <p>Enter your phone number and the amount to repay, then click the button below to proceed with the payment.</p>
+    <form action="repayment.php" method="POST">
+      <label for="phone">Phone Number:<span class="required">*</span></label>
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="amount">Amount to Repay:<span class="required">*</span></label>
+      <input type="number" id="amount" name="amount" placeholder="Enter the amount" required>
+
+      <button type="submit" class="repayment-button">Proceed to Payment</button>
+    </form>
+  </div>
+</body>
+
+</html>
